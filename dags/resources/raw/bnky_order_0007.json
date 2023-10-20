@@ -1,0 +1,22 @@
+{
+   "customer_id": 7,
+   "store_id": 6,
+   "creation_timestamp":"2023-04-10T10:05:02Z",
+   "items_bought":[
+      {
+         "item_id": 1,
+         "quatity": 1,
+         "total_price": 103.2
+      },
+      {
+         "item_id": 4,
+         "quatity": 1,
+         "total_price": 118.5
+      },
+      {
+         "item_id": 10,
+         "quatity": 1,
+         "total_price": 62.46
+      }
+   ]
+}

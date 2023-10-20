@@ -1,5 +1,7 @@
 CREATE SCHEMA IF NOT EXISTS staging;
 
+CREATE SCHEMA IF NOT EXISTS facts;
+
 CREATE TABLE IF NOT EXISTS staging.customers (
     customer_id serial PRIMARY KEY,
     first_name VARCHAR(40) NOT NULL,
@@ -19,7 +21,7 @@ CREATE TABLE IF NOT EXISTS staging.items (
 CREATE TABLE IF NOT EXISTS staging.stores (
     store_id serial PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    location NUMERIC VARCHAR(100) NOT NULL
+    location VARCHAR(60) NOT NULL
 );
 
 INSERT INTO staging.customers (first_name, last_name, phone_number, curp, rfc, address) VALUES
