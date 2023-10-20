@@ -11,7 +11,7 @@ from helpers.queries import *
 
 logger = get_logger()
 credentials = {
-    "host": "bankaya-project-pgadmin4-1",
+    "host": "bankaya-project-postgres-1",
     "user": "airflow",
     "password": "airflow",
     "database": "airflow",

@@ -2,7 +2,7 @@ import pandas as pd
 from pathlib import Path
 from helpers.utils import get_tmp_path_files, save_df_file
 
-def process_data(dag_main_file, oltp_tmp_paths, **kwargs):
+def process_data(dag_main_file, **kwargs):
     oltp_tmp_paths = kwargs["ti"].xcom_pull(key="return_value", task_ids="extract_db_data")
     json_tmp_paths = kwargs["ti"].xcom_pull(key="return_value", task_ids="extract_json_data")
     oltp_tmp_customer = f"{oltp_tmp_paths}/df_costumers"

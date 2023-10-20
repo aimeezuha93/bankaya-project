@@ -1,7 +1,6 @@
-import sys
 from airflow import DAG
 from datetime import datetime, timedelta
-from airflow.decorators import task, task_group
+from airflow.decorators import task
 from airflow.operators.empty import EmptyOperator
 from airflow.utils.helpers import chain
 from libs.database_handler import db_handler
@@ -9,7 +8,6 @@ from libs.extraction import get_db_data, get_json_data
 from libs.transformation import process_data
 from libs.load import put_data
 
-sys.path.insert(0, "/usr/local/airflow/dags")
 
 default_args = {
     "owner": "airflow",
@@ -20,6 +18,7 @@ default_args = {
     "email_on_retry": False,
     "retries": 1,
     "retry_delay": timedelta(minutes=5),
+    "provide_context": True
 }
 
 with DAG(
@@ -62,6 +61,7 @@ with DAG(
     _load_data = load_data()
 
     chain(
+        start,
         _create_db_objects,
         _extract_json_data,
         _extract_db_data,

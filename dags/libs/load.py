@@ -3,7 +3,7 @@ import pandas as pd
 from helpers.database_connection import get_engine
 
 credentials = {
-    "host": "bankaya-project-pgadmin4-1",
+    "host": "bankaya-project-postgres-1",
     "user": "airflow",
     "password": "airflow",
     "database": "airflow",
